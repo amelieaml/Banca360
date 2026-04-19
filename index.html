@@ -1,13 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Banca360</title>
-        <link rel="stylesheet" href="Style.css">
-    </head>
-    <body>  
-        <script src="script.js"></script>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskHub - Minimal Design</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">TaskHub</a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item opdesplegables">
+                    <a href="#" class="nav-link">Proyectos</a>
+                    <ul class="opdesplegables-menu">
+                        <li><a href="#">Activos</a></li>
+                        <li><a href="#">Archivados</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item opdesplegables">
+                    <a href="#" class="nav-link">Equipo</a>
+                    <ul class="opdesplegables-menu">
+                        <li><a href="#">Miembros</a></li>
+                        <li><a href="#">Roles</a></li>
+                        <li><a href="#">Permisos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-auth-btn">Iniciar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="min-height: 80vh; padding: 2rem; text-align: center;">
+        <h1>Bienvenido a TaskHub</h1>
+        <p>Gestión colaborativa con un toque minimalista.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TaskHub</h3>
+                <p>Elevando la productividad a través del diseño inteligente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>info@taskhub.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TaskHub. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
