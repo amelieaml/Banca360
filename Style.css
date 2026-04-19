@@ -1,0 +1,16 @@
+:root {
+    --bg-sidebar: #ffffff;
+    --accent-color: #007aff;
+    --text-color: #333;
+    --sidebar-collapsed: 70px;
+    --sidebar-expanded: 240px;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
