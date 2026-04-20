@@ -46,10 +46,68 @@
         </div>
     </nav>
 
-    <main style="min-height: 80vh; padding: 2rem; text-align: center;">
-        <h1>Bienvenido a TaskHub</h1>
-        <p>Gestión colaborativa con un toque minimalista.</p>
-    </main>
+<main class="page-content-wrapper">
+    <h1>Bienvenido a TaskHub</h1>
+    <p>Gestión colaborativa con un toque minimalista.</p>
+    
+    <div class="form-wrapper-custom">
+        <div class="task-card-custom">
+            <div class="header-task">
+                <h3>Assign Task</h3>
+                <p>Assign task for people join to team</p>
+            </div>
+
+            <form class="task-form-custom">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Assign to</label>
+                        <select><option>Insan Kamil</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label>Lead Project</label>
+                        <select><option>Miguel Lorenzo</option></select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Task Title</label>
+                        <input type="text" placeholder="Research payment flow">
+                    </div>
+                    <div class="form-group">
+                        <label>Tags</label>
+                        <div class="tags-input">
+                            <span class="tag">Web Design ✕</span>
+                            <span class="tag">User Research ✕</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" value="2025-01-10">
+                    </div>
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" value="2025-01-12">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea rows="4" placeholder="Descript your experience here!"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary">Save as Draft</button>
+                    <button type="button" class="btn-secondary">Reset Data</button>
+                    <button type="submit" class="btn-primary">Save Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
 
     <footer class="footer">
         <div class="footer-container">
