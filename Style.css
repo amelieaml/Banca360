@@ -228,3 +228,50 @@ body {
         display: block;
     }
 }
+
+/*////////////////////////////// FORMULARIO (MODIFICADO) //////////////////////////////*/
+
+/* Wrapper: Resetea el centrado del main y limita el ancho */
+.form-wrapper-custom {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left; /* Corrige el problema de alineación */
+    padding: 0 1rem;
+}
+
+/* La tarjeta blanca */
+.task-card-custom {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+.header-task h3 { margin-bottom: 0.5rem; color: var(--text-dark); }
+.header-task p { color: var(--text-light); margin-bottom: 2rem; font-size: 0.9rem; }
+
+/* Grid de formulario */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;}
+.form-group label { font-weight: 600; font-size: 0.9rem; color: var(--text-dark); }
+
+.form-group input, .form-group select, .form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.tags-input { display: flex; gap: 0.5rem; align-items: center; min-height: 42px;}
+.tag { background: #eef2ff; color: var(--primary-color); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; }
+
+/* Actions */
+.form-actions { display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem; }
+.btn-primary { background: var(--text-dark); color: white; padding: 0.8rem 1.5rem; border-radius: 6px; border: none; cursor: pointer; }
+.btn-secondary { background: white; border: 1px solid #e2e8f0; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer; }
+
+/* Responsive Form */
+@media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+}
