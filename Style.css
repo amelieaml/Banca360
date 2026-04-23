@@ -177,6 +177,7 @@ body {
     font-size: 0.8rem;
     color: var(--text-light);
 }
+/***************************************************/
 
 /* --- RESPONSIVE --- */
 @media screen and (max-width: 768px) {
