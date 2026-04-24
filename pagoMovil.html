@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskHub - Minimal Design</title>
+    <title>Banca360</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,7 +13,7 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">TaskHub</a>
+            <a href="dashboard.html" class="nav-logo">Banca360</a>
             
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -22,27 +22,18 @@
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Inicio</a>
-                </li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
                 <li class="nav-item opdesplegables">
-                    <a href="#" class="nav-link">Proyectos</a>
+                    <a href="#" class="nav-link">Operaciones</a>
                     <ul class="opdesplegables-menu">
-                        <li><a href="#">Activos</a></li>
-                        <li><a href="#">Archivados</a></li>
-                        <li><a href="#">Reportes</a></li>
+                        <li><a href="transferencia.html">Transferencias</a></li>
+                        <li><a href="pagomovil.html">Pago Móvil</a></li>
+                        <li><a href="depositos.html">Depósitos</a></li>
                     </ul>
                 </li>
-                <li class="nav-item opdesplegables">
-                    <a href="#" class="nav-link">Equipo</a>
-                    <ul class="opdesplegables-menu">
-                        <li><a href="#">Miembros</a></li>
-                        <li><a href="#">Roles</a></li>
-                        <li><a href="#">Permisos</a></li>
-                    </ul>
-                </li>
+                <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
                 <li class="nav-item">
-                    <a href="#" class="nav-auth-btn">Iniciar Sesión</a>
+                    <a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
@@ -110,7 +101,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Concepto</label>
-                                <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su número de teléfono">
+                                <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese el concepto del pago">
                                 
                             </div>
                         </div>

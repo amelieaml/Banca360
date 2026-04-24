@@ -529,10 +529,11 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-color); /* Usa el azul de tu proyecto */
-    padding: 0 0.5rem;
-    margin-bottom: 1.5rem;
     display: block;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
     width: 100%;
+    float: none;
 }
 
 /* Ajuste para que las cuadrículas (form-row) respeten el espacio */
@@ -552,4 +553,110 @@ body {
 /* Responsive Form */
 @media (max-width: 600px) {
     .form-row { grid-template-columns: 1fr; }
+}
+
+/* Lista de requisitos de contraseña */
+.password-requirements {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.password-requirements li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.password-requirements .material-symbols-outlined {
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+/* Estado cuando se cumple un requisito */
+.password-requirements li.valid {
+    color: #10b981; /* Un verde éxito para feedback visual */
+}
+
+/* Contenedor de las acciones finales */
+.form-footer-actions {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Botón de registro ocupando todo el ancho */
+.btn-submit-full {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-submit-full:hover {
+    background: #1d4ed8;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+/* Texto de invitación al login */
+.login-prompt {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.login-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* --- LOGIN ESPECÍFICO --- */
+.form-login-container {
+    max-width: 450px !important; /* Forzamos el ancho específico para el login */
+}
+
+.centered-header {
+    text-align: center;
+}
+
+/* --- ESTADOS DE CARGA (SPINNER) --- */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+.spinner.show {
+    display: block;
+}
+
+@keyframes spin { 
+    to { transform: rotate(360deg); } 
+}
+
+.btn-loading { 
+    display: flex !important; 
+    align-items: center; 
+    justify-content: center; 
+    pointer-events: none; 
+    opacity: 0.8; 
 }
