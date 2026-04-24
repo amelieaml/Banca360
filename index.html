@@ -56,86 +56,97 @@
                     <h3>Assign Task</h3>
                     <p>Assign task for people join to team</p>
                 </div>
-
                 <form class="task-form-custom">
-                    <div class="form-row">
+    
+                    <fieldset class="form-section-container">
+                        <legend class="custom-section-title">Información personal</legend>
+                        <div class="form-row" id="Informacion-personal">
+                            <div class="form-group">
+                                <label>Apellidos</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">person</span>
+                                    </span>
+                                    <input type="text" placeholder="Primer y Segundo Apellido">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Nombres</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">person</span>
+                                    </span>
+                                    <input type="text" placeholder="Primer y Segundo Nombre">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Número de identificación</label>
+                                <div class="input-with-icon combo-id">
+                                    <select class="select-minimalista select-tipo-xs">
+                                        <option value="V">V</option>
+                                        <option value="E">E</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su cédula">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha de Nacimiento</label>
+                                <div class="input-with-icon">
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label>Usuario</label>
+                            <label>Dirección de habitación</label>
                             <div class="input-with-icon">
                                 <span class="icon-perfil">
-                                    <span class="material-symbols-outlined">person</span>
+                                    <span class="material-symbols-outlined">location_on</span>
                                 </span>
-                                <input type="text" placeholder="Research payment flow">
+                                <input type="text" placeholder="Ej. Av. Teherán, Urb. Montalbán">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label>Número de tarjeta</label>
-                            <div class="input-with-icon">
-                                <span class="icon-prefix">
-                                    <i data-lucide="credit-card"></i>
-                                </span>
-                            </div>
-                            <input type="text" placeholder="Research payment flow">
-                        </div>
-                        <div class="form-group">
-                            <label>correo</label>
-                            <input type="text" placeholder="Research payment flow">
-                        </div>
-                        <div class="form-group">
-                            <label>Assign to</label>
-                            <div class="select-caja-flecha">
-                                <select class="select-minimalista">
-                                    <option>Insan Kamil</option>
-                                    <option>Another User</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Lead Project</label>
-                            <div class="select-caja-flecha">
-                                <select class="select-minimalista">
-                                    <option>Insan Kamil</option>
-                                    <option>Another User</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Task Title</label>
-                            <input type="text" placeholder="Research payment flow">
-                        </div>
-                        <div class="form-group">
-                            <label>Tags</label>
-                            <div class="tags-input">
-                                <span class="tag">Web Design ✕</span>
-                                <span class="tag">User Research ✕</span>
-                            </div>
-                        </div>
-                    </div>
+                    </fieldset>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Start Date</label>
-                            <input type="date" value="2025-01-10">
+                    <fieldset class="form-section-container">
+                        <legend class="custom-section-title">Información de la cuenta</legend>
+                        <div class="form-row" id="Informacion-cuenta">
+                            <div class="form-group">
+                                <label>Número de tarjeta</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">credit_card</span>
+                                    </span>
+                                    <input type="text" placeholder="0000 0000 0000 0000">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" placeholder="ejemplo@correo.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Assign to</label>
+                                <div class="select-caja-flecha">
+                                    <select class="select-minimalista">
+                                        <option>Insan Kamil</option>
+                                        <option>Otro Usuario</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Lead Project</label>
+                                <div class="select-caja-flecha">
+                                    <select class="select-minimalista">
+                                        <option>Insan Kamil</option>
+                                        <option>Otro Usuario</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>End Date</label>
-                            <input type="date" value="2025-01-12">
-                        </div>
-                    </div>
+                    </fieldset>
 
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea rows="4" placeholder="Descript your experience here!"></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-secondary">Save as Draft</button>
-                        <button type="button" class="btn-secondary">Reset Data</button>
-                        <button type="submit" class="btn-primary">Save Task</button>
-                    </div>
-                </form>
+                 </form>
+                
             </div>
         </div>
     </main>

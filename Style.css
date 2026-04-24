@@ -341,6 +341,36 @@ body {
     color: var(--text-dark);
 }
 
+/* Estilos para las secciones del formulario */
+.form-section {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+
+/* El primer fieldset no necesita borde superior */
+.form-section:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+    float: left; /* Permite que el título se comporte como un encabezado */
+    width: 100%;
+}
+
+/* Ajuste para que los rows no se peguen a la leyenda */
+.form-section .form-row {
+    clear: both;
+}
+
 .form-group input, .form-group select, .form-group textarea {
     padding: 0.8rem;
     border: 1px solid #d7e3f1;
@@ -363,6 +393,72 @@ body {
     border-color: #b5bfdb;
     box-shadow: 0 0 0 2px rgba(183, 183, 196, 0.2);
 }
+
+/* Contenedor del grupo */
+.combo-id {
+    display: flex;
+    align-items: stretch;
+}
+
+/* Selector extra pequeño (XS) */
+.select-tipo-xs {
+    width: 50px !important; /* Ancho mínimo para la letra y la flecha */
+    min-width: 50px !important;
+    padding-left: 0.6rem !important;
+    padding-right: 1.2rem !important; /* Espacio justo para la flecha */
+    border-right: 1px solid #d7e3f1 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    background-position: right 0.3rem center !important; /* Flecha pegada al borde derecho */
+    font-size: 0.85rem !important;
+}
+
+/* Ajuste del input para que use el resto del espacio */
+.combo-id input {
+    flex: 1;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    padding-left: 0.8rem !important;
+}
+
+/* Reset de padding para la fecha (ya que no tiene icono) */
+.input-with-icon input[type="date"] {
+    padding-left: 0.8rem !important;
+}
+
+/* Contenedor de la sección */
+.form-section-container {
+    border: none;
+    border-top: 1px solid #e2e8f0; /* Línea sutil divisoria */
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+/* El primer bloque no necesita línea arriba */
+.form-section-container:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Título de la sección (Legend) */
+.custom-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Usa el azul de tu proyecto */
+    padding: 0 0.5rem;
+    margin-bottom: 1.2rem;
+    display: block;
+    width: 100%;
+}
+
+/* Ajuste para que las cuadrículas (form-row) respeten el espacio */
+.form-section-container .form-row {
+    margin-top: 0.5rem;
+}
+
+
 .tags-input { display: flex; gap: 0.5rem; align-items: center; min-height: 42px;}
 .tag { background: #eef2ff; color: var(--primary-color); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.8rem; cursor: pointer; }
 
