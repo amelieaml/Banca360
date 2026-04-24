@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskHub - Minimal Design</title>
     <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -46,68 +48,97 @@
         </div>
     </nav>
 
-<main class="page-content-wrapper">
-    <h1>Bienvenido a TaskHub</h1>
-    <p>Gestión colaborativa con un toque minimalista.</p>
-    
-    <div class="form-wrapper-custom">
-        <div class="task-card-custom">
-            <div class="header-task">
-                <h3>Assign Task</h3>
-                <p>Assign task for people join to team</p>
-            </div>
-
-            <form class="task-form-custom">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Assign to</label>
-                        <select><option>Insan Kamil</option></select>
-                    </div>
-                    <div class="form-group">
-                        <label>Lead Project</label>
-                        <select><option>Miguel Lorenzo</option></select>
-                    </div>
+    <main class="page-content-wrapper">
+        
+        <div class="form-wrapper-custom">
+            <div class="task-card-custom">
+                <div class="header-task">
+                    <h3>Assign Task</h3>
+                    <p>Assign task for people join to team</p>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Task Title</label>
-                        <input type="text" placeholder="Research payment flow">
-                    </div>
-                    <div class="form-group">
-                        <label>Tags</label>
-                        <div class="tags-input">
-                            <span class="tag">Web Design ✕</span>
-                            <span class="tag">User Research ✕</span>
+                <form class="task-form-custom">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Usuario</label>
+                            <div class="input-with-icon">
+                                <span class="icon-perfil">
+                                    <span class="material-symbols-outlined">person</span>
+                                </span>
+                                <input type="text" placeholder="Research payment flow">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Número de tarjeta</label>
+                            <div class="input-with-icon">
+                                <span class="icon-prefix">
+                                    <i data-lucide="credit-card"></i>
+                                </span>
+                            </div>
+                            <input type="text" placeholder="Research payment flow">
+                        </div>
+                        <div class="form-group">
+                            <label>correo</label>
+                            <input type="text" placeholder="Research payment flow">
+                        </div>
+                        <div class="form-group">
+                            <label>Assign to</label>
+                            <div class="select-caja-flecha">
+                                <select class="select-minimalista">
+                                    <option>Insan Kamil</option>
+                                    <option>Another User</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Lead Project</label>
+                            <div class="select-caja-flecha">
+                                <select class="select-minimalista">
+                                    <option>Insan Kamil</option>
+                                    <option>Another User</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Start Date</label>
-                        <input type="date" value="2025-01-10">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Task Title</label>
+                            <input type="text" placeholder="Research payment flow">
+                        </div>
+                        <div class="form-group">
+                            <label>Tags</label>
+                            <div class="tags-input">
+                                <span class="tag">Web Design ✕</span>
+                                <span class="tag">User Research ✕</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>End Date</label>
-                        <input type="date" value="2025-01-12">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" value="2025-01-10">
+                        </div>
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="date" value="2025-01-12">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea rows="4" placeholder="Descript your experience here!"></textarea>
-                </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea rows="4" placeholder="Descript your experience here!"></textarea>
+                    </div>
 
-                <div class="form-actions">
-                    <button type="button" class="btn-secondary">Save as Draft</button>
-                    <button type="button" class="btn-secondary">Reset Data</button>
-                    <button type="submit" class="btn-primary">Save Task</button>
-                </div>
-            </form>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Save as Draft</button>
+                        <button type="button" class="btn-secondary">Reset Data</button>
+                        <button type="submit" class="btn-primary">Save Task</button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
     <footer class="footer">
         <div class="footer-container">
@@ -134,5 +165,8 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
