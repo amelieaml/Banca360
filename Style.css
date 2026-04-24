@@ -289,6 +289,89 @@ body {
     background-color: white;
     color: #050834;
 }
+/*////////////////////////////// INPUT DE MONTO (RESPONSIVE & CENTRADO) //////////////////////////////*/
+
+.amount-group {
+    margin-bottom: 2.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la etiqueta y el helper */
+}
+
+.amount-container {
+    display: flex;
+    justify-content: center; /* Mantiene el contenido centrado horizontalmente */
+    align-items: baseline;   /* Alinea el texto 'Bs' con la base de los números */
+    gap: 12px;
+    padding: 1rem 0;
+    border-bottom: 2px solid #e2e8f0;
+    /* Responsive: ocupa el 90% del ancho móvil hasta un máximo de 400px */
+    width: 90%; 
+    max-width: 400px;
+    margin: 0 auto;
+    transition: var(--transition);
+    overflow: hidden; /* Red de seguridad para evitar desbordamientos */
+}
+
+.amount-container:focus-within {
+    border-color: var(--primary-color);
+}
+
+.currency-label {
+    /* Tamaño fluido: se encoge en móviles pequeños */
+    font-size: clamp(1.2rem, 5vw, 2rem); 
+    font-weight: 800;
+    color: var(--text-dark);
+    flex-shrink: 0; /* Evita que el símbolo se aplaste */
+}
+
+.amount-container input {
+    border: none !important;
+    background: transparent !important;
+    /* Fuente fluida: entre 2rem y 3.5rem según el ancho de pantalla */
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+    font-weight: 700;
+    color: var(--primary-color);
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    text-align: center;
+    /* Ocupa el espacio disponible sin empujar el contenedor */
+    width: 100%;
+    min-width: 0; 
+}
+
+.amount-container input::placeholder {
+    color: #cbd5e1;
+}
+
+.amount-helper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: clamp(0.75rem, 3vw, 0.85rem);
+    color: var(--text-light);
+    margin-top: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.amount-helper .material-symbols-outlined {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* Ajuste extra para pantallas extremadamente pequeñas */
+@media (max-width: 320px) {
+    .amount-container {
+        gap: 5px;
+    }
+    .amount-container input {
+        font-size: 1.8rem !important;
+    }
+}
 /*////////////////////////////// ESTILOS PARA INPUTS CON ÍCONO (NUEVO) //////////////////////////////*/
 
 .input-with-icon {
@@ -430,8 +513,7 @@ body {
 .form-section-container {
     border: none;
     border-top: 1px solid #e2e8f0; /* Línea sutil divisoria */
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
+    margin-top: 1rem;
     position: relative;
 }
 
@@ -448,14 +530,14 @@ body {
     font-weight: 700;
     color: var(--primary-color); /* Usa el azul de tu proyecto */
     padding: 0 0.5rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
     display: block;
     width: 100%;
 }
 
 /* Ajuste para que las cuadrículas (form-row) respeten el espacio */
 .form-section-container .form-row {
-    margin-top: 0.5rem;
+    margin-top: 0;
 }
 
 
