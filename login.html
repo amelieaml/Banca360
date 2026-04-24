@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca360 - Iniciar Sesión</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Banca360</a>
+        </div>
+    </nav>
+
+    <main class="page-content-wrapper">
+        <div class="form-wrapper-custom form-login-container">
+            <div class="task-card-custom">
+                <div class="header-task centered-header">
+                    <h3>¡Bienvenido de nuevo!</h3>
+                    <p>Ingresa tus credenciales para acceder</p>
+                </div>
+                
+                <form id="loginForm" class="task-form-custom">
+                    <div class="form-group">
+                        <label>Correo electrónico</label>
+                        <div class="input-with-icon">
+                            <span class="icon-perfil"><span class="material-symbols-outlined">mail</span></span>
+                            <input type="email" required placeholder="ejemplo@correo.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <div class="input-with-icon">
+                            <span class="icon-perfil"><span class="material-symbols-outlined">lock</span></span>
+                            <input type="password" required placeholder="******">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btnLogin" class="btn-submit-full">
+                        <span class="btn-text">Ingresar</span>
+                        <div class="spinner" id="spinner"></div>
+                    </button>
+                </form>
+
+                <p class="login-prompt">
+                    ¿No tienes cuenta? <a href="index.html" class="login-link">Regístrate aquí</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
