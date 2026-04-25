@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca360</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="nav-logo">Banca360</a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item opdesplegables">
+                    <a href="#" class="nav-link">Operaciones</a>
+                    <ul class="opdesplegables-menu">
+                        <li><a href="transferencia.html">Transferencias</a></li>
+                        <li><a href="pagomovil.html">Pago Móvil</a></li>
+                        <li><a href="depositos.html">Depósitos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
+                <li class="nav-item">
+                    <a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content-wrapper">
+        
+        <div class="form-wrapper-custom">
+            <div class="task-card-custom">
+                <div class="header-task">
+                    <h3>Transferencia</h3>
+                    <p>Realiza transferencias entre cuentas</p>
+                </div>
+                <form class="task-form-custom">
+    
+                    <fieldset class="form-section-container">
+                        <div class="form-group">
+                            <label>Monto</label>
+                            <div class="input-with-icon">
+                                <span class="icon-perfil">
+                                    <span class="material-symbols-outlined">location_on</span>
+                                </span>
+                                <input type="text" placeholder="Ej. Av. Teherán, Urb. Montalbán">
+                            </div>
+                        </div>
+                        <div class="form-row" id="Informacion-personal">
+                            <div class="form-group">
+                                <label>Nombre o razón social</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">person</span>
+                                    </span>
+                                    <input type="text" placeholder="Nombre o razón social">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Número de cuenta</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">credit_card</span>
+                                    </span>
+                                    <input type="text" placeholder="0000 0000 0000 0000">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Número de identificación</label>
+                                <div class="input-with-icon combo-id">
+                                    <select class="select-minimalista select-tipo-xs">
+                                        <option value="V">V</option>
+                                        <option value="E">E</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su cédula">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Correo</label>
+                                <input type="email" placeholder="ejemplo@correo.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Cuenta a debitar</label>
+                                <div class="select-caja-flecha">
+                                    <select class="select-minimalista">
+                                        <option>Cuenta divisas</option>
+                                        <option>Cuenta bolivares</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Concepto</label>
+                                <input type="text" placeholder="Ingrese el concepto de la transferencia">
+                            </div>
+
+                        </div>
+                        
+                    </fieldset>
+
+                 </form>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TaskHub</h3>
+                <p>Elevando la productividad a través del diseño inteligente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>info@taskhub.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TaskHub. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

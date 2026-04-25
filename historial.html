@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca360 - Historial</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="nav-logo">Banca360</a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item opdesplegables">
+                    <a href="#" class="nav-link">Operaciones</a>
+                    <ul class="opdesplegables-menu">
+                        <li><a href="transferencia.html">Transferencias</a></li>
+                        <li><a href="pagomovil.html">Pago Móvil</a></li>
+                        <li><a href="depositos.html">Depósitos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
+                <li class="nav-item">
+                    <a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="form-wrapper-custom">
+        <div class="welcome-container">
+            <h1>Historial de Movimientos</h1>
+            <p>Consulta tus transacciones recientes.</p>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterTx('all', this)">Todos</button>
+            <button class="filter-btn" onclick="filterTx('in', this)">Solo entradas</button>
+            <button class="filter-btn" onclick="filterTx('out', this)">Solo salidas</button>
+        </div>
+
+        <div class="task-card-custom">
+            <ul class="transaction-list" id="transactionList">
+                
+                <li class="transaction-item tx-entry" data-type="in">
+                    <div class="tx-icon incoming"><span class="material-symbols-outlined">south_west</span></div>
+                    <div class="tx-info">
+                        <p class="tx-name">Transferencia Recibida - Juan Pérez</p>
+                        <p class="tx-date">Hoy, 10:30 AM</p>
+                    </div>
+                    <div class="tx-amount positive">+ 150.00 Bs</div>
+                </li>
+
+                <li class="transaction-item tx-entry" data-type="out">
+                    <div class="tx-icon outgoing"><span class="material-symbols-outlined">north_east</span></div>
+                    <div class="tx-info">
+                        <p class="tx-name">Pago Móvil - Supermercado</p>
+                        <p class="tx-date">Ayer, 06:15 PM</p>
+                    </div>
+                    <div class="tx-amount negative">- 45.20 Bs</div>
+                </li>
+
+                <li class="transaction-item tx-entry" data-type="in">
+                    <div class="tx-icon incoming"><span class="material-symbols-outlined">south_west</span></div>
+                    <div class="tx-info">
+                        <p class="tx-name">Nómina Quincenal - Empresa C.A.</p>
+                        <p class="tx-date">15 Abr 2026</p>
+                    </div>
+                    <div class="tx-amount positive">+ 2,500.00 Bs</div>
+                </li>
+
+                <li class="transaction-item tx-entry" data-type="out">
+                    <div class="tx-icon outgoing"><span class="material-symbols-outlined">payments</span></div>
+                    <div class="tx-info">
+                        <p class="tx-name">Retiro por Cajero</p>
+                        <p class="tx-date">14 Abr 2026</p>
+                    </div>
+                    <div class="tx-amount negative">- 200.00 Bs</div>
+                </li>
+
+                <li class="transaction-item tx-entry" data-type="out">
+                    <div class="tx-icon outgoing"><span class="material-symbols-outlined">shopping_cart</span></div>
+                    <div class="tx-info">
+                        <p class="tx-name">Compra Online - Amazon</p>
+                        <p class="tx-date">12 Abr 2026</p>
+                    </div>
+                    <div class="tx-amount negative">- 85.00 Bs</div>
+                </li>
+
+                <li class="transaction-item tx-entry" data-type="in">
+                    <div class="tx-icon incoming"><span class="material-symbols-outlined">p2p</span></div>
+                    <div class="tx-info">
+                        <p class="tx-name">Pago Móvil Recibido - Maria S.</p>
+                        <p class="tx-date">10 Abr 2026</p>
+                    </div>
+                    <div class="tx-amount positive">+ 320.00 Bs</div>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TaskHub</h3>
+                <p>Elevando la productividad a través del diseño inteligente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>info@taskhub.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TaskHub. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        function filterTx(type, btn) {
+            const items = document.querySelectorAll('.tx-entry');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Actualizar botones
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filtrar lista
+            items.forEach(item => {
+                const isMatch = type === 'all' || item.getAttribute('data-type') === type;
+                item.style.display = isMatch ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>
