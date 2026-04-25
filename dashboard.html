@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca360 - Dashboard</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="nav-logo">Banca360</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link active">Inicio</a></li>
+                <li class="nav-item opdesplegables">
+                    <a href="#" class="nav-link">Operaciones</a>
+                    <ul class="opdesplegables-menu">
+                        <li><a href="transferencia.html">Transferencias</a></li>
+                        <li><a href="pagomovil.html">Pago Móvil</a></li>
+                        <li><a href="depositos.html">Depósitos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
+                <li class="nav-item"><a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content-wrapper">
+        <div class="form-wrapper-custom">
+            
+            <div class="welcome-container">
+                <h1>¡Bienvenido!</h1>
+                <p>Resumen general de tus cuentas.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                
+                <div class="task-card-custom balance-card">
+                    <div class="balance-info">
+                        <span class="balance-label">Saldo Disponible</span>
+                        <div class="amount-wrapper">
+                            <h2 id="balanceAmount" class="hidden">$ 1.000.000,00</h2>
+                            <h2 id="balanceHidden">••••••</h2>
+                        </div>
+                    </div>
+                    <button id="toggleBalance" class="btn-eye-toggle">
+                        <span class="material-symbols-outlined" id="eyeIcon">visibility_off</span>
+                    </button>
+                </div>
+
+                <div class="task-card-custom">
+                    <div class="header-task">
+                        <h2>Últimos movimientos</h2>
+                    </div>
+                    
+                    <ul class="transaction-list">
+                        <li class="transaction-item">
+                            <div class="tx-icon incoming"><span class="material-symbols-outlined">add_circle</span></div>
+                            <div class="tx-info">
+                                <p class="tx-name">Transferencia recibida</p>
+                                <p class="tx-date">Hoy, 10:30 AM</p>
+                            </div>
+                            <span class="tx-amount positive">+$ 150.00</span>
+                        </li>
+                        <li class="transaction-item">
+                            <div class="tx-icon outgoing"><span class="material-symbols-outlined">remove_circle</span></div>
+                            <div class="tx-info">
+                                <p class="tx-name">Pago Móvil enviado</p>
+                                <p class="tx-date">Ayer, 04:15 PM</p>
+                            </div>
+                            <span class="tx-amount negative">-$ 45.00</span>
+                        </li>
+                        <li class="transaction-item">
+                            <div class="tx-icon outgoing"><span class="material-symbols-outlined">shopping_bag</span></div>
+                            <div class="tx-info">
+                                <p class="tx-name">Transferencia enviada</p>
+                                <p class="tx-date">22 Abr, 09:00 AM</p>
+                            </div>
+                            <span class="tx-amount negative">-$ 120.50</span>
+                        </li>
+                    </ul>
+                    <a href="historial.html" class="login-link">Ver todos</a>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            &copy; 2026 Banca360. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
