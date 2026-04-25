@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banca360</title>
+    <title>Banca360 - Registro</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -22,7 +24,7 @@
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Inicio</a></li>
                 <li class="nav-item opdesplegables">
                     <a href="#" class="nav-link">Operaciones</a>
                     <ul class="opdesplegables-menu">
@@ -52,49 +54,59 @@
                     <fieldset class="form-section-container">
                         <legend class="custom-section-title">Información personal</legend>
                         <div class="form-row" id="Informacion-personal">
-                            <div class="form-group">
-                                <label>Apellidos</label>
+                            <div class="form-group"> 
+                                <label>Apellidos <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
-                                    <span class="icon-perfil">
-                                        <span class="material-symbols-outlined">person</span>
-                                    </span>
-                                    <input type="text" placeholder="Primer y Segundo Apellido">
+                                    <span class="icon-perfil"><span class="material-symbols-outlined">person</span></span>
+                                    <input type="text" required placeholder="Primer y Segundo Apellido"> 
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label>Nombres</label>
+                                <label>Nombres <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
-                                    <span class="icon-perfil">
-                                        <span class="material-symbols-outlined">person</span>
-                                    </span>
-                                    <input type="text" placeholder="Primer y Segundo Nombre">
+                                    <span class="icon-perfil"><span class="material-symbols-outlined">person</span></span>
+                                    <input type="text" required placeholder="Primer y Segundo Nombre"> 
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label>Número de identificación</label>
+                                <label>Número de identificación <span class="required-mark">*</span></label>
                                 <div class="input-with-icon combo-id">
-                                    <select class="select-minimalista select-tipo-xs">
+                                    <select class="select-minimalista select-tipo-xs" required> 
                                         <option value="V">V</option>
                                         <option value="E">E</option>
                                         <option value="J">J</option>
                                     </select>
-                                    <input type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su cédula">
+                                    <input type="text" required inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su cédula">
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label>Fecha de Nacimiento</label>
+                                <label>Fecha de Nacimiento <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
-                                    <input type="date">
+                                    <input type="date" required> 
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Dirección de habitación</label>
-                            <div class="input-with-icon">
-                                <span class="icon-perfil">
-                                    <span class="material-symbols-outlined">location_on</span>
-                                </span>
-                                <input type="text" placeholder="Ej. Av. Teherán, Urb. Montalbán">
+
+                            <div class="form-group">
+                                <label>RIF <span class="required-mark">*</span></label>
+                                <div class="input-with-icon combo-id">
+                                    <select class="select-minimalista select-tipo-xs" required> 
+                                        <option value="V">V</option>
+                                        <option value="E">E</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                    <input type="text" required inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su RIF">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Lugar de residencia <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil"><span class="material-symbols-outlined">location_on</span></span>
+                                    <input type="text" required placeholder="Ej. Av. Teherán, Urb. Montalbán">
+                                </div>
                             </div>
                         </div>
                     </fieldset>
@@ -103,49 +115,27 @@
                         <legend class="custom-section-title">Información de la cuenta</legend>
                         <div class="form-row" id="Informacion-cuenta">
                             <div class="form-group">
-                                <label>Número de tarjeta</label>
+                                <label>Número de tarjeta <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="icon-perfil">
                                         <span class="material-symbols-outlined">credit_card</span>
                                     </span>
-                                    <input type="text" placeholder="0000 0000 0000 0000">
+                                    <input type="text" required placeholder="0000 0000 0000 0000">
                                 </div>
                             </div>
+
                             <div class="form-group">
-                                <label>Correo</label>
-                                <input type="email" placeholder="ejemplo@correo.com">
+                                <label>Correo <span class="required-mark">*</span></label>
+                                <input type="email" required placeholder="ejemplo@correo.com">
                             </div>
-                            <div class="form-group">
-                                <label>Assign to</label>
-                                <div class="select-caja-flecha">
-                                    <select class="select-minimalista">
-                                        <option>Insan Kamil</option>
-                                        <option>Otro Usuario</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Lead Project</label>
-                                <div class="select-caja-flecha">
-                                    <select class="select-minimalista">
-                                        <option>Insan Kamil</option>
-                                        <option>Otro Usuario</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
                     
-                    <fieldset class="form-section-container">
-                        <legend class="custom-section-title">Seguridad</legend>
-                        <div class="form-row">
                             <div class="form-group">
-                                <label>Contraseña</label>
+                                <label>Contraseña <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="icon-perfil">
                                         <span class="material-symbols-outlined">lock</span>
                                     </span>
-                                    <input type="password" id="password" placeholder="Ej. 123456">
+                                    <input type="password" id="password" required placeholder="Ej. 123456">
                                 </div>
                                 <ul class="password-requirements">
                                     <li id="req-length">
@@ -156,13 +146,14 @@
                                     </li>
                                 </ul>
                             </div>
+
                             <div class="form-group">
-                                <label>Confirmar Contraseña</label>
+                                <label>Confirmar Contraseña <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="icon-perfil">
                                         <span class="material-symbols-outlined">lock_reset</span>
                                     </span>
-                                    <input type="password" id="confirm-password" placeholder="Repita su contraseña">
+                                    <input type="password" id="confirm-password" required placeholder="Repita su contraseña">
                                 </div>
                             </div>
                         </div>
@@ -187,7 +178,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>TaskHub</h3>
+                <h3>Banca360</h3>
                 <p>Elevando la productividad a través del diseño inteligente.</p>
             </div>
             <div class="footer-section">
@@ -200,11 +191,11 @@
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
-                <p>info@taskhub.com</p>
+                <p>banca360@gmail.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 TaskHub. Todos los derechos reservados.
+            &copy; 2026 Banca360. Todos los derechos reservados.
         </div>
     </footer>
 
@@ -212,5 +203,7 @@
     <script>
         lucide.createIcons();
     </script>
+
 </body>
+
 </html>
