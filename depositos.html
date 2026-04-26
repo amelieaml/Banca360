@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banca360 - Depósitos</title>
+    <title>Banca360</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -22,6 +23,7 @@
 
             <ul class="nav-menu">
                 <li class="nav-item"><a href="dashboard.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfil</a></li>
                 <li class="nav-item opdesplegables">
                     <a href="#" class="nav-link">Operaciones</a>
                     <ul class="opdesplegables-menu">
@@ -39,42 +41,87 @@
     </nav>
 
     <main class="page-content-wrapper">
+        
         <div class="form-wrapper-custom">
             <div class="task-card-custom">
                 <div class="header-task">
-                    <h3>Depósitos</h3>
-                    <p>Módulo de simulación de entrada de dinero</p>
+                    <h3>Depósito</h3>
+                    <p>Realiza depósitos en tu cuenta</p>
                 </div>
-
-                <form id="deposit-form" class="task-form-custom">
+                <form class="task-form-custom">
+    
                     <fieldset class="form-section-container">
-                        
-                        <div class="form-group amount-group">
-                            <label style="text-align: center; display: block;">Monto a depositar</label>
+                       <div class="form-group amount-group">
+                            <label style="text-align: center; display: block;">Monto</label>
                             <div class="amount-container">
                                 <span class="currency-label">Bs</span>
                                 <input type="text" 
-                                       id="deposit-amount" 
-                                       inputmode="decimal" 
-                                       placeholder="0.00" 
-                                       required>
+                                    id="input-monto" 
+                                    inputmode="decimal" 
+                                    placeholder="0.00" 
+                                    oninput="formatAmount(this)">
                             </div>
+                            <p class="amount-helper">
+                                <span class="material-symbols-outlined">credit_card</span> 
+                                El monto será debitado de tu cuenta inmediatamente
+                            </p>
                         </div>
-
-                        <div class="form-row">
+                        <div class="form-row" id="Informacion-personal">
                             <div class="form-group">
-                                <label>Cuenta de destino</label>
+                                <label>Cuenta a debitar</label>
                                 <div class="select-caja-flecha">
-                                    <select class="select-minimalista" required>
-                                        <option value="corriente">Cuenta Corriente - *4567</option>
-                                        <option value="ahorro">Cuenta de Ahorro - *8821</option>
+                                    <select class="select-minimalista">
+                                        <option>Cuenta divisas</option>
+                                        <option>Cuenta bolivares</option>
                                     </select>
                                 </div>
                             </div>
-                            
                             <div class="form-group">
-                                <label>Método de ingreso</label>
-                                <div class="select-caja-flecha">
-                                    <select class="select-minimalista" required>
-                                        <option value="efectivo">Efectivo</option>
-                                        <option
+                                <label>Descripción</label>
+                                <input type="text" placeholder="Ingrese una descripción para el depósito">
+                            </div>
+                            
+
+                        </div>
+                        <button type="submit" id="btnLogin" class="btn-submit-full">
+                            <span class="btn-text">Ingresar</span>
+                            <div class="spinner" id="spinner"></div>
+                        </button>
+                    </fieldset>
+
+                 </form>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TaskHub</h3>
+                <p>Elevando la productividad a través del diseño inteligente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>info@taskhub.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TaskHub. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
