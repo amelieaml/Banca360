@@ -163,6 +163,73 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // ============================
+    // 8. LÓGICA DE LA MODAL
+    // ============================
+    const openModalBtn = document.getElementById('btnOpenModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const passwordModal = document.getElementById('passwordModal');
+
+    if (openModalBtn && passwordModal) {
+        openModalBtn.addEventListener('click', () => {
+            passwordModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            passwordModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === passwordModal) {
+                passwordModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    // ===========================================
+    // 8. DESPLEGABLE CON VALIDACIÓN EN PERFIL
+    // ===========================================
+    const btnToggle = document.getElementById('btnTogglePassword');
+    const passwordCollapse = document.getElementById('passwordCollapse');
+    const newPassInput = document.getElementById('newPasswordPerfil');
+    
+    // Requisitos visuales
+    const reqLen = document.getElementById('req-length-p');
+    const reqNum = document.getElementById('req-number-p');
+
+    if (btnToggle && passwordCollapse) {
+        btnToggle.addEventListener('click', () => {
+            passwordCollapse.classList.toggle('show');
+            btnToggle.innerText = passwordCollapse.classList.contains('show') ? 'Cancelar' : 'Actualizar';
+        });
+    }
+
+    if (newPassInput) {
+        newPassInput.addEventListener('input', () => {
+            const val = newPassInput.value;
+
+            // 1. Validar Longitud
+            if (val.length >= 6) {
+                reqLen.classList.add('valid');
+                reqLen.querySelector('.material-symbols-outlined').innerText = 'check_circle';
+            } else {
+                reqLen.classList.remove('valid');
+                reqLen.querySelector('.material-symbols-outlined').innerText = 'circle';
+            }
+
+            // 2. Validar Solo Números
+            const isNumeric = /^[0-9]*$/.test(val);
+            if (isNumeric && val.length > 0) {
+                reqNum.classList.add('valid');
+                reqNum.querySelector('.material-symbols-outlined').innerText = 'check_circle';
+            } else {
+                reqNum.classList.remove('valid');
+                reqNum.querySelector('.material-symbols-outlined').innerText = 'circle';
+            }
+        });
+    }
 });
 
 // ==========================================
@@ -185,4 +252,81 @@ function formatAmount(input) {
     } else {
         input.style.width = "200px";
     }
+    
 }
+
+// ==========================================
+// 9. FILTRADO DE TRANSACCIONES (HISTORIAL)
+// ==========================================
+function filterTx(type, btn) {
+    const items = document.querySelectorAll('.tx-entry');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Actualizar estado visual de los botones
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filtrar lista con una pequeña transición
+    items.forEach(item => {
+        const isMatch = type === 'all' || item.getAttribute('data-type') === type;
+        if (isMatch) {
+            item.style.display = 'flex';
+            setTimeout(() => { item.style.opacity = '1'; }, 10);
+        } else {
+            item.style.opacity = '0';
+            item.style.display = 'none';
+        }
+    });
+}
+
+// ==========================================
+// 10. LÓGICA DE LA MINI PANTALLA DE DETALLES
+// ==========================================
+function showTxDetail(name, person, date, amount, ref) {
+    const modal = document.getElementById('detailModal');
+    const body = document.getElementById('modalBody');
+
+    if (!modal || !body) return;
+
+    body.innerHTML = `
+        <div class="detail-item">
+            <label>Tipo de Operación</label>
+            <p>${name}</p>
+        </div>
+        <div class="detail-item">
+            <label>Descripción / Beneficiario</label>
+            <p>${person}</p>
+        </div>
+        <div class="detail-item">
+            <label>Fecha y Hora</label>
+            <p>${date}</p>
+        </div>
+        <div class="detail-item">
+            <label>Monto</label>
+            <p><strong>${amount}</strong></p>
+        </div>
+        <div class="detail-item">
+            <label>Número de Referencia</label>
+            <p>${ref}</p>
+        </div>
+    `;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Bloquea el scroll de fondo
+}
+
+function closeTxDetail() {
+    const modal = document.getElementById('detailModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Devuelve el scroll
+    }
+}
+
+// Cerrar si el usuario hace clic fuera de la tarjeta blanca
+window.addEventListener('click', (event) => {
+    const modal = document.getElementById('detailModal');
+    if (event.target == modal) {
+        closeTxDetail();
+    }
+});

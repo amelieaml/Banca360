@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca360 - Perfil</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="dashboard.html" class="nav-logo">Banca360</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link active">Inicio</a></li>
+                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfil</a></li>
+                <li class="nav-item opdesplegables">
+                    <a href="#" class="nav-link">Operaciones</a>
+                    <ul class="opdesplegables-menu">
+                        <li><a href="transferencia.html">Transferencias</a></li>
+                        <li><a href="pagomovil.html">Pago Móvil</a></li>
+                        <li><a href="depositos.html">Depósitos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
+                <li class="nav-item"><a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="form-wrapper-custom">
+        <div class="profile-header">
+            <div class="avatar-container">
+                <span class="material-symbols-outlined">account_circle</span>
+            </div>
+            <h2>Mi Perfil</h2>
+            <p>Gestiona tu información personal y académica</p>
+        </div>
+
+        <div class="task-card-custom profile-card">
+            <div class="header-task">
+                <h3>Información Personal</h3>
+            </div>
+            
+            <div class="profile-info-grid">
+                <div class="info-item">
+                    <label>Nombre Completo</label>
+                    <p>Juan Pérez</p>
+                </div>
+                <div class="info-item">
+                    <label>Correo Electrónico</label>
+                    <p>juan.perez@est.ucab.edu.ve</p>
+                </div>
+                <div class="info-item">
+                    <label>Cédula de Identidad</label>
+                    <p>V-28.123.456</p>
+                </div>
+                <div class="info-item">
+                    <label>Carrera</label>
+                    <p>Ingeniería Informática</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-card-custom profile-card">
+            <div class="header-task">
+                <h3>Seguridad</h3>
+            </div>
+            <div class="security-options">
+                <div class="security-item">
+                    <div class="sec-text">
+                        <p class="sec-title">Cambiar Contraseña</p>
+                        <p class="sec-desc">Actualiza tu clave de acceso periódicamente.</p>
+                    </div>
+                    <button id="btnTogglePassword" class="filter-btn">Actualizar</button>
+                </div>
+
+                <div id="passwordCollapse" class="password-collapse">
+                    <form id="changePasswordForm" class="task-form-custom">
+                        <div class="form-group">
+                            <label>Nueva Contraseña</label>
+                            <input type="password" id="newPasswordPerfil" class="form-input-custom" required>
+                            
+                            <div class="password-requirements">
+                                <p id="req-length-p" class="requirement">
+                                    <span class="material-symbols-outlined">circle</span>
+                                    Mínimo 6 caracteres
+                                </p>
+                                <p id="req-number-p" class="requirement">
+                                    <span class="material-symbols-outlined">circle</span>
+                                    Solo números
+                                </p>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit-full">
+                            <span>Confirmar Cambio</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="security-item">
+                    <div class="sec-text">
+                        <p class="sec-title">Verificación en dos pasos</p>
+                        <p class="sec-desc">Añade una capa extra de protección.</p>
+                    </div>
+                    <span class="status-badge valid">Activado</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-prompt">
+            <a href="dashboard.html" class="login-link">Volver al inicio</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>TaskHub</h3>
+                <p>Elevando la productividad a través del diseño inteligente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>info@taskhub.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 TaskHub. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

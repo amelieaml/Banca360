@@ -4,6 +4,7 @@
     --text-light: #64748b;
     --bg-white: #ffffff;
     --bg-light: #f8fafc;
+    --border-color: #e2e8f0;
     --transition: all 0.3s ease;
 }
 
@@ -891,4 +892,209 @@ body {
 /* Estilo para que se vea clickable */
 .transaction-item:hover {
     background-color: #fcfdfe;
+}
+/* --- ESTILOS DE PERFIL --- */
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-container {
+    margin-bottom: 1rem;
+}
+
+.avatar-container .material-symbols-outlined {
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+.profile-card {
+    margin-bottom: 1.5rem !important;
+}
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas grandes */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Ajuste para móvil */
+@media (max-width: 600px) {
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Opciones de Seguridad */
+.security-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.security-item:last-child {
+    border-bottom: none;
+}
+
+.sec-title {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.sec-desc {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-badge.valid {
+    background: #dcfce7;
+    color: #166534;
+}
+/* --- ESTILOS DEL DESPLEGABLE --- */
+.password-collapse {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease, 
+                margin 0.4s ease;
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.password-collapse.show {
+    max-height: 500px; /* Suficiente para los nuevos campos */
+    opacity: 1;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Estilo para los checks de validación */
+.password-requirements {
+    margin-top: 10px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.requirement.valid {
+    color: #166534; /* Verde éxito */
+}
+
+.requirement .material-symbols-outlined {
+    font-size: 16px;
+}
+
+/* Botón de información al lado del monto */
+.btn-info-detail {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.btn-info-detail:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos de la Mini Pantalla (Sobrepuesta) */
+.tx-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none; /* Oculta por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.tx-modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.tx-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-modal {
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item label {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    color: #1e293b;
+    margin: 0;
 }
