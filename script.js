@@ -135,35 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ============================
-    // 6. HISTORIAL DE MOVIMIENTOS
-    // ============================
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const txItems = document.querySelectorAll('.tx-entry');
-
-    // Solo ejecutamos si existen botones de filtro en la página actual
-    if (filterButtons.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                // Prevenir comportamientos extraños
-                const filter = button.getAttribute('data-filter');
-
-                // 1. Manejar clases activas en botones
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // 2. Filtrar elementos de la lista
-                txItems.forEach(item => {
-                    const type = item.getAttribute('data-type');
-                    if (filter === 'all' || type === filter) {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
-    // ============================
     // 8. LÓGICA DE LA MODAL
     // ============================
     const openModalBtn = document.getElementById('btnOpenModal');
@@ -262,15 +233,18 @@ function filterTx(type, btn) {
     const items = document.querySelectorAll('.tx-entry');
     const buttons = document.querySelectorAll('.filter-btn');
     
-    // Actualizar estado visual de los botones
+    // 1. Actualizar estado visual de los botones
     buttons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // Filtrar lista con una pequeña transición
+    // 2. Filtrar lista
     items.forEach(item => {
-        const isMatch = type === 'all' || item.getAttribute('data-type') === type;
-        if (isMatch) {
+        // Obtenemos el tipo del atributo data-type ("in" o "out")
+        const itemType = item.getAttribute('data-type');
+        
+        if (type === 'all' || itemType === type) {
             item.style.display = 'flex';
+            // Forzamos un pequeño reflow para la transición de opacidad si la tienes en CSS
             setTimeout(() => { item.style.opacity = '1'; }, 10);
         } else {
             item.style.opacity = '0';
