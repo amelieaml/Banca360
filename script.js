@@ -229,26 +229,25 @@ function formatAmount(input) {
 // ==========================================
 // 9. FILTRADO DE TRANSACCIONES (HISTORIAL)
 // ==========================================
+// Función de filtrado corregida
 function filterTx(type, btn) {
     const items = document.querySelectorAll('.tx-entry');
     const buttons = document.querySelectorAll('.filter-btn');
     
-    // 1. Actualizar estado visual de los botones
+    // 1. Cambiar la clase 'active' de los botones
     buttons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    // 2. Filtrar lista
+    // 2. Mostrar u ocultar elementos según el tipo
     items.forEach(item => {
-        // Obtenemos el tipo del atributo data-type ("in" o "out")
         const itemType = item.getAttribute('data-type');
         
         if (type === 'all' || itemType === type) {
-            item.style.display = 'flex';
-            // Forzamos un pequeño reflow para la transición de opacidad si la tienes en CSS
-            setTimeout(() => { item.style.opacity = '1'; }, 10);
+            item.style.display = 'flex'; // Usamos flex porque es el diseño de tu lista
+            item.style.opacity = '1';
         } else {
-            item.style.opacity = '0';
             item.style.display = 'none';
+            item.style.opacity = '0';
         }
     });
 }
