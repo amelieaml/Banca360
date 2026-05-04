@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// 8. FUNCIONES GLOBALES (FUERA DEL DOMCONTENTLOADED)
+// 8. FUNCIONES GLOBALES
 // ==========================================
 
 // Formato de Monto y Ancho Dinámico
