@@ -81,6 +81,23 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 window.location.href = 'security-config.html';
             }, 2000);
+
+            // === Validación de Edad (Dentro del submit) ===
+            const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+            const fechaNacDate = new Date(fechaNacimiento);
+            const hoy = new Date();
+            let edad = hoy.getFullYear() - fechaNacDate.getFullYear();
+            const mes = hoy.getMonth() - fechaNacDate.getMonth();
+
+            // Ajustar si aún no ha cumplido años este año
+            if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacDate.getDate())) {
+                edad--;
+            }
+
+            if (edad < 18) {
+                alert("Debes ser mayor de 18 años para registrarte.");
+                return; // Detiene el envío del formulario
+            }
         });
     }
 
@@ -201,6 +218,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const inputTelefono = document.getElementById('input-telefono');
+
+    inputTelefono.addEventListener('input', function (e) {
+        // 1. Eliminar todo lo que no sea número
+        let value = e.target.value.replace(/\D/g, '');
+        
+        // 2. Si hay más de 4 números, insertar el guion
+        if (value.length > 4) {
+            value = value.slice(0, 4) + '-' + value.slice(4, 11);
+        }
+        
+        // 3. Actualizar el valor del input
+        e.target.value = value;
+    
+    const fechaInput = document.getElementById('fecha-nacimiento');
+    if (fechaInput) {
+        const hoy = new Date();
+        // Restamos 18 años a la fecha actual
+        const hace18Anos = new Date(hoy.getFullYear() - 18, hoy.getMonth(), hoy.getDate());
+        
+        // Formatear a YYYY-MM-DD para el atributo 'max'
+        const maxFecha = hace18Anos.toISOString().split('T')[0];
+        fechaInput.setAttribute('max', maxFecha);
+    }
+});
 });
 
 // ==========================================
@@ -303,3 +346,18 @@ window.addEventListener('click', (event) => {
         closeTxDetail();
     }
 });
+
+document.getElementById('numero-cuenta').addEventListener('input', function (e) {
+    // Elimina todo lo que no sea un número
+    let value = e.target.value.replace(/\D/g, '');
+    
+    let formattedValue = value.match(/.{1,4}/g)?.join(' ') || '';
+    
+    if (value.length > 20) {
+        value = value.substring(0, 20);
+        formattedValue = value.match(/.{1,4}/g).join(' ');
+    }
+    
+    e.target.value = formattedValue;
+});
+
