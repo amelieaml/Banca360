@@ -1,13 +1,17 @@
 :root {
-    --primary-color: #2563eb;
-    --text-dark: #1e293b;
+    
+    --primary-color: #1e3a8a; 
+    
+    --primary-hover: #172554;
+    --primary-soft: #dbeafe;
+
+    --text-dark: #0f172a;   
     --text-light: #64748b;
     --bg-white: #ffffff;
-    --bg-light: #f8fafc;
-    --border-color: #e2e8f0;
+    --bg-light: #f1f5f9;    
+    --border-color: #cbd5e183;
     --transition: all 0.3s ease;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -611,7 +615,7 @@ body {
 }
 
 .btn-submit-full:hover {
-    background: #1d4ed8;
+    background: #0a365c !important;;
     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
 }
 
@@ -703,7 +707,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 6px solid #10b981;
+    border-left: 6px solid #06385aa2;
     padding: 1.5rem 2rem !important;
 }
 
@@ -904,10 +908,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.avatar-container .material-symbols-outlined {
-    font-size: 5rem;
-    color: var(--primary-color);
-}
+
 
 .profile-card {
     margin-bottom: 1.5rem !important;
@@ -1035,7 +1036,6 @@ body {
     transform: scale(1.2);
 }
 
-/* Estilos de la Mini Pantalla (Sobrepuesta) */
 .tx-modal-overlay {
     position: fixed;
     top: 0;
@@ -1098,3 +1098,51 @@ body {
     color: #1e293b;
     margin: 0;
 }
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.avatar-container .material-symbols-outlined {
+    font-size: 100px;
+    color: var(--primary-color);
+}
+
+.profile-card .header-task h3 {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.profile-card .header-task h3 .material-symbols-outlined {
+    margin-right: 8px;
+}
+
+.security-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.password-requirements {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.requirement {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.text-danger {
+    color: var(--primary-color) !important;
+}
+
