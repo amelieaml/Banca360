@@ -17,8 +17,10 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+            
             <ul class="nav-menu">
                 <li class="nav-item"><a href="dashboard.html" class="nav-link active">Inicio</a></li>
+                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfil</a></li>
                 <li class="nav-item opdesplegables">
                     <a href="#" class="nav-link">Operaciones</a>
                     <ul class="opdesplegables-menu">
@@ -31,6 +33,19 @@
                 <li class="nav-item"><a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a></li>
             </ul>
         </div>
+         <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
+        </div>
     </nav>
 
     <main class="page-content-wrapper">
@@ -38,7 +53,7 @@
             
             <div class="welcome-container">
                 <h1>¡Bienvenido!</h1>
-                <p>Resumen general de tus cuentas.</p>
+                <p>A tu banca de confianza</p>
             </div>
 
             <div class="dashboard-grid">
@@ -47,7 +62,7 @@
                     <div class="balance-info">
                         <span class="balance-label">Saldo Disponible</span>
                         <div class="amount-wrapper">
-                            <h2 id="balanceAmount" class="hidden">$ 1.000.000,00</h2>
+                            <h2 id="balanceAmount" class="hidden">Bs. 1.000.000,00</h2>
                             <h2 id="balanceHidden">••••••</h2>
                         </div>
                     </div>
@@ -87,7 +102,12 @@
                             <span class="tx-amount negative">-$ 120.50</span>
                         </li>
                     </ul>
-                    <a href="historial.html" class="login-link">Ver todos</a>
+                    <div class="login-prompt">
+                        <a href="historial.html" class="login-link">
+                            <span class="material-symbols-outlined"></span> Ver historial completo
+                        </a>
+                    </div>
+                            
                 </div>
                 
             </div>
@@ -95,6 +115,24 @@
     </main>
 
     <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Banca360</h3>
+                <p>Tu banca de confianza.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>info@banca360.com</p>
+            </div>
+        </div>
         <div class="footer-bottom">
             &copy; 2026 Banca360. Todos los derechos reservados.
         </div>

@@ -7,6 +7,7 @@
     <title>Banca360 - Iniciar Sesión</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
 </head>
 
 <body class="layout-centrado-total">
@@ -15,14 +16,27 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Banca360</a>
         </div>
+        <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
+        </div>
     </nav>
 
     <main class="page-content-wrapper">
         <div class="form-wrapper-custom form-login-container">
             <div class="task-card-custom">
                 <div class="header-task centered-header">
-                    <h3>¡Bienvenido de nuevo!</h3>
-                    <p>Ingresa tus credenciales para acceder</p>
+                    <h1>¡Bienvenido de nuevo!</h1>
+                    <p></p>
                 </div>
                 
                 <form id="loginForm" class="task-form-custom">

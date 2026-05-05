@@ -13,8 +13,8 @@
         <div class="nav-container">
             <a href="dashboard.html" class="nav-logo">Banca360</a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="dashboard.html" class="nav-link active">Inicio</a></li>
-                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfil</a></li>
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="perfil.html" class="nav-link active">Perfil</a></li>
                 <li class="nav-item opdesplegables">
                     <a href="#" class="nav-link">Operaciones</a>
                     <ul class="opdesplegables-menu">
@@ -24,23 +24,38 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
-                <li class="nav-item"><a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a></li>
+                <li class="nav-item"><a href="logout.html" class="nav-auth-btn logout-btn">Cerrar Sesión</a></li>
             </ul>
+        </div>
+         <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
         </div>
     </nav>
 
     <main class="form-wrapper-custom">
+        
         <div class="profile-header">
             <div class="avatar-container">
                 <span class="material-symbols-outlined">account_circle</span>
             </div>
-            <h2>Mi Perfil</h2>
-            <p>Gestiona tu información personal y académica</p>
+            <h1>Mi Perfil</h1>
         </div>
 
         <div class="task-card-custom profile-card">
             <div class="header-task">
-                <h3>Información Personal</h3>
+                <h3>
+                    <span class="material-symbols-outlined">badge</span> Información Personal
+                </h3>
             </div>
             
             <div class="profile-info-grid">
@@ -57,67 +72,61 @@
                     <p>V-28.123.456</p>
                 </div>
                 <div class="info-item">
-                    <label>Carrera</label>
-                    <p>Ingeniería Informática</p>
+                    <label>Ocupación</label>
+                    <p>Ingeniero Informático</p>
                 </div>
             </div>
         </div>
 
         <div class="task-card-custom profile-card">
             <div class="header-task">
-                <h3>Seguridad</h3>
+                <h3 class="text-danger">
+                    <span class="material-symbols-outlined">lock</span> Seguridad
+                </h3>
             </div>
+            
             <div class="security-options">
                 <div class="security-item">
                     <div class="sec-text">
                         <p class="sec-title">Cambiar Contraseña</p>
-                        <p class="sec-desc">Actualiza tu clave de acceso periódicamente.</p>
                     </div>
-                    <button id="btnTogglePassword" class="filter-btn">Actualizar</button>
+                    <button id="btnTogglePassword" class="filter-btn active">Actualizar</button>
                 </div>
 
                 <div id="passwordCollapse" class="password-collapse">
                     <form id="changePasswordForm" class="task-form-custom">
                         <div class="form-group">
+                            
                             <label>Nueva Contraseña</label>
-                            <input type="password" id="newPasswordPerfil" class="form-input-custom" required>
+                            <input type="password" id="newPasswordPerfil" class="form-input-custom" placeholder="••••••" required>
                             
                             <div class="password-requirements">
                                 <p id="req-length-p" class="requirement">
-                                    <span class="material-symbols-outlined">circle</span>
-                                    Mínimo 6 caracteres
+                                    <span class="material-symbols-outlined">circle</span> Mínimo 6 caracteres
                                 </p>
                                 <p id="req-number-p" class="requirement">
-                                    <span class="material-symbols-outlined">circle</span>
-                                    Solo números
+                                    <span class="material-symbols-outlined">circle</span> Solo números
                                 </p>
                             </div>
                         </div>
-                        <button type="submit" class="btn-submit-full">
-                            <span>Confirmar Cambio</span>
-                        </button>
+                        <button type="submit" class="btn-submit-full">Confirmar Cambio</button>
                     </form>
-                </div>
-                <div class="security-item">
-                    <div class="sec-text">
-                        <p class="sec-title">Verificación en dos pasos</p>
-                        <p class="sec-desc">Añade una capa extra de protección.</p>
-                    </div>
-                    <span class="status-badge valid">Activado</span>
                 </div>
             </div>
         </div>
 
         <div class="login-prompt">
-            <a href="dashboard.html" class="login-link">Volver al inicio</a>
+            <a href="dashboard.html" class="login-link">
+                <span class="material-symbols-outlined"></span> Volver al inicio
+            </a>
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>TaskHub</h3>
-                <p>Elevando la productividad a través del diseño inteligente.</p>
+                <h3>Banca360</h3>
+                <p>Tu banca de confianza.</p>
             </div>
             <div class="footer-section">
                 <h4>Enlaces</h4>
@@ -129,11 +138,11 @@
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
-                <p>info@taskhub.com</p>
+                <p>info@banca360.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 TaskHub. Todos los derechos reservados.
+            &copy; 2026 Banca360. Todos los derechos reservados.
         </div>
     </footer>
 

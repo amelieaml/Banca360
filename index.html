@@ -22,22 +22,19 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="dashboard.html" class="nav-link">Inicio</a></li>
-                <li class="nav-item opdesplegables">
-                    <a href="#" class="nav-link">Operaciones</a>
-                    <ul class="opdesplegables-menu">
-                        <li><a href="transferencia.html">Transferencias</a></li>
-                        <li><a href="pagomovil.html">Pago Móvil</a></li>
-                        <li><a href="depositos.html">Depósitos</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
-                <li class="nav-item">
-                    <a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a>
-                </li>
-            </ul>
+        </div>
+         <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
         </div>
     </nav>
 
@@ -45,9 +42,8 @@
         
         <div class="form-wrapper-custom">
             <div class="task-card-custom">
-                <div class="header-task">
-                    <h3>Crear cuenta</h3>
-                    <p>¡Cuéntanos sobre ti!</p>
+                <div class="profile-header">
+                    <h1>Crear cuenta</h1>
                 </div>
                 <form id="registerForm" class="task-form-custom">
     
@@ -85,19 +81,17 @@
                             <div class="form-group">
                                 <label>Fecha de Nacimiento <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
-                                    <input type="date" required> 
+                                    <input type="date" id="fecha-nacimiento" required> 
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label>RIF <span class="required-mark">*</span></label>
-                                <div class="input-with-icon combo-id">
-                                    <select class="select-minimalista select-tipo-xs" required> 
-                                        <option value="V">V</option>
-                                        <option value="E">E</option>
-                                        <option value="J">J</option>
-                                    </select>
-                                    <input type="text" required inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su RIF">
+                                <label>Teléfono</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">phone</span>
+                                    </span>
+                                    <input type="text" id="input-telefono" inputmode="numeric" placeholder="Ingrese su número de teléfono" maxlength="12">
                                 </div>
                             </div>
 
@@ -105,7 +99,7 @@
                                 <label>Lugar de residencia <span class="required-mark">*</span></label>
                                 <div class="input-with-icon">
                                     <span class="icon-perfil"><span class="material-symbols-outlined">location_on</span></span>
-                                    <input type="text" required placeholder="Ej. Av. Teherán, Urb. Montalbán">
+                                    <input type="text" required placeholder="Ej: Caracas, Urb. La Campiña">
                                 </div>
                             </div>
                         </div>
@@ -115,12 +109,12 @@
                         <legend class="custom-section-title">Información de la cuenta</legend>
                         <div class="form-row" id="Informacion-cuenta">
                             <div class="form-group">
-                                <label>Número de tarjeta <span class="required-mark">*</span></label>
+                                <label>Número de cuenta</label>
                                 <div class="input-with-icon">
                                     <span class="icon-perfil">
                                         <span class="material-symbols-outlined">credit_card</span>
                                     </span>
-                                    <input type="text" required placeholder="0000 0000 0000 0000">
+                                        <input type="text" id="numero-cuenta" placeholder="0000 0000 0000 0000 0000" maxlength="24" inputmode="numeric">
                                 </div>
                             </div>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banca360</title>
+    <title>Banca360 - Transferencia</title>
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -22,7 +22,7 @@
             </div>
 
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Inicio</a></li>
                 <li class="nav-item opdesplegables">
                     <a href="#" class="nav-link">Operaciones</a>
                     <ul class="opdesplegables-menu">
@@ -37,36 +37,54 @@
                 </li>
             </ul>
         </div>
+         <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
+        </div>
     </nav>
 
     <main class="page-content-wrapper">
         
         <div class="form-wrapper-custom">
             <div class="task-card-custom">
-                <div class="header-task">
-                    <h3>Transferencia</h3>
-                    <p>Realiza transferencias entre cuentas</p>
+                <div class="profile-header">
+                    <h1>Transferencia</h1>
                 </div>
                 <form class="task-form-custom">
     
                     <fieldset class="form-section-container">
-                        <div class="form-group">
-                            <label>Monto</label>
-                            <div class="input-with-icon">
-                                <span class="icon-perfil">
-                                    <span class="material-symbols-outlined">location_on</span>
-                                </span>
-                                <input type="text" placeholder="Ej. Av. Teherán, Urb. Montalbán">
+                       <div class="form-group amount-group">
+                            <label style="text-align: center; display: block;">Monto</label>
+                            <div class="amount-container">
+                                <span class="currency-label">Bs.</span>
+                                <input type="text" 
+                                    id="input-monto" 
+                                    inputmode="decimal" 
+                                    placeholder="0.00" 
+                                    oninput="formatAmount(this)">
                             </div>
+                            <p class="amount-helper">
+                                <span class="material-symbols-outlined">credit_card</span> 
+                                El monto será debitado de tu cuenta inmediatamente
+                            </p>
                         </div>
                         <div class="form-row" id="Informacion-personal">
                             <div class="form-group">
-                                <label>Nombre o razón social</label>
+                                <label>Nombre y Apellido</label>
                                 <div class="input-with-icon">
                                     <span class="icon-perfil">
                                         <span class="material-symbols-outlined">person</span>
                                     </span>
-                                    <input type="text" placeholder="Nombre o razón social">
+                                    <input type="text" placeholder="Nombre y Apellido">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -75,11 +93,11 @@
                                     <span class="icon-perfil">
                                         <span class="material-symbols-outlined">credit_card</span>
                                     </span>
-                                    <input type="text" placeholder="0000 0000 0000 0000">
+                                        <input type="text" id="numero-cuenta" placeholder="0000 0000 0000 0000 0000" maxlength="24" inputmode="numeric">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label>Número de identificación</label>
+                                <label>Doucmento de identidad</label>
                                 <div class="input-with-icon combo-id">
                                     <select class="select-minimalista select-tipo-xs">
                                         <option value="V">V</option>
@@ -108,7 +126,6 @@
                             </div>
 
                         </div>
-                        
                     </fieldset>
                     <button type="submit" id="btnLogin" class="btn-submit-full">
                         <span class="btn-text">Transferir</span>
@@ -123,8 +140,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>TaskHub</h3>
-                <p>Elevando la productividad a través del diseño inteligente.</p>
+                <h3>Banca360</h3>
+                <p>Tu banca de confianza.</p>
             </div>
             <div class="footer-section">
                 <h4>Enlaces</h4>
@@ -136,17 +153,15 @@
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
-                <p>info@taskhub.com</p>
+                <p>info@banca360.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 TaskHub. Todos los derechos reservados.
+            &copy; 2026 Banca360. Todos los derechos reservados.
         </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+
 </body>
 </html>

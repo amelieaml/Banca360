@@ -29,18 +29,31 @@
                         <li><a href="depositos.html">Depósitos</a></li>
                     </ul>
                 </li>
+                <li class="nav-item"><a href="perfil.html" class="nav-link">Perfil</a></li>
                 <li class="nav-item"><a href="historial.html" class="nav-link">Historial</a></li>
                 <li class="nav-item">
                     <a href="logout.html" class="nav-auth-btn">Cerrar Sesión</a>
                 </li>
             </ul>
         </div>
+         <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
+        </div>
     </nav>
 
     <main class="form-wrapper-custom">
         <div class="welcome-container">
             <h1>Historial de Movimientos</h1>
-            <p>Consulta tus transacciones recientes.</p>
         </div>
 
         <div class="filter-container">
@@ -59,6 +72,10 @@
                         <p class="tx-date">Hoy, 10:30 AM</p>
                     </div>
                     <div class="tx-amount positive">+ 150.00 Bs</div>
+                    
+                    <button class="btn-info-detail" onclick="showTxDetail('Transferencia Recibida', 'Juan Pérez', 'Hoy, 10:30 AM', '+ 150.00 Bs', '#98234105')">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
                 </li>
 
                 <li class="transaction-item tx-entry" data-type="out">
@@ -68,6 +85,10 @@
                         <p class="tx-date">Ayer, 06:15 PM</p>
                     </div>
                     <div class="tx-amount negative">- 45.20 Bs</div>
+                    
+                    <button class="btn-info-detail" onclick="showTxDetail('Pago Móvil', 'Supermercado', 'Ayer, 06:15 PM', '- 45.20 Bs', '#98234105')">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
                 </li>
 
                 <li class="transaction-item tx-entry" data-type="in">
@@ -77,6 +98,10 @@
                         <p class="tx-date">15 Abr 2026</p>
                     </div>
                     <div class="tx-amount positive">+ 2,500.00 Bs</div>
+
+                    <button class="btn-info-detail" onclick="showTxDetail('Nómina Quincenal', 'Empresa C.A.', '15 Abr 2026', '+ 2,500.00 Bs', '#98234105')">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
                 </li>
 
                 <li class="transaction-item tx-entry" data-type="out">
@@ -86,6 +111,10 @@
                         <p class="tx-date">14 Abr 2026</p>
                     </div>
                     <div class="tx-amount negative">- 200.00 Bs</div>
+
+                    <button class="btn-info-detail" onclick="showTxDetail('Retiro por Cajero', 'Cajero Automático', '14 Abr 2026', '- 200.00 Bs', '#98234105')">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
                 </li>
 
                 <li class="transaction-item tx-entry" data-type="out">
@@ -95,6 +124,10 @@
                         <p class="tx-date">12 Abr 2026</p>
                     </div>
                     <div class="tx-amount negative">- 85.00 Bs</div>
+
+                    <button class="btn-info-detail" onclick="showTxDetail('Compra Online', 'Amazon', '12 Abr 2026', '- 85.00 Bs', '#98234105')">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
                 </li>
 
                 <li class="transaction-item tx-entry" data-type="in">
@@ -104,7 +137,23 @@
                         <p class="tx-date">10 Abr 2026</p>
                     </div>
                     <div class="tx-amount positive">+ 320.00 Bs</div>
+
+                    <button class="btn-info-detail" onclick="showTxDetail('Pago Móvil Recibido', 'Maria S.', '10 Abr 2026', '+ 320.00 Bs', '#98234105')">
+                        <span class="material-symbols-outlined">info</span>
+                    </button>
                 </li>
+
+                <div id="detailModal" class="tx-modal-overlay">
+                    <div class="tx-modal-content">
+                        <div class="tx-modal-header">
+                            <h3>Detalle de Transacción</h3>
+                            <span class="close-modal" onclick="closeTxDetail()">&times;</span>
+                        </div>
+                        <div class="tx-modal-body" id="modalBody">
+                            </div>
+                        <button class="btn-submit-full" onclick="closeTxDetail()">Cerrar</button>
+                    </div>
+                </div>
             </ul>
         </div>
     </main>
@@ -112,8 +161,8 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>TaskHub</h3>
-                <p>Elevando la productividad a través del diseño inteligente.</p>
+                <h3>Banca360</h3>
+                <p>Tu banca de confianza.</p>
             </div>
             <div class="footer-section">
                 <h4>Enlaces</h4>
@@ -125,30 +174,16 @@
             </div>
             <div class="footer-section">
                 <h4>Contacto</h4>
-                <p>info@taskhub.com</p>
+                <p>info@banca360.com</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 TaskHub. Todos los derechos reservados.
+            &copy; 2026 Banca360. Todos los derechos reservados.
         </div>
     </footer>
 
-    <script>
-        function filterTx(type, btn) {
-            const items = document.querySelectorAll('.tx-entry');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            // Actualizar botones
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    <script src="script.js"></script>
 
-            // Filtrar lista
-            items.forEach(item => {
-                const isMatch = type === 'all' || item.getAttribute('data-type') === type;
-                item.style.display = isMatch ? 'flex' : 'none';
-            });
-        }
-    </script>
 </body>
 
 </html>

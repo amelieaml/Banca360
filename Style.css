@@ -1,12 +1,28 @@
 :root {
-    --primary-color: #2563eb;
-    --text-dark: #1e293b;
+    
+    --primary-color: #1e3a8a; 
+    
+    --primary-hover: #172554;
+    --primary-soft: #dbeafe;
+
+    --text-dark: #0f172a;   
     --text-light: #64748b;
     --bg-white: #ffffff;
-    --bg-light: #f8fafc;
+    --bg-light: #f1f5f9;    
+    --border-color: #cbd5e183;
     --transition: all 0.3s ease;
 }
-
+.dark-mode {
+    /* Colores Modo Oscuro */
+    --bg-main: #121212;
+    --bg-card: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #333333;
+    --navbar-bg: #000000;
+    --titulos-azul-color: #4169b2;
+    --azul-oscuro: #05183b;
+}
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +33,228 @@
 body {
     background-color: var(--bg-light);
     color: var(--text-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/********************************************** MODO OSCURO *************************************************/
+.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Forzar a que todos los contenedores hereden el fondo */
+.dark-mode body, 
+.dark-mode .main-content, 
+.dark-mode .container-fluid,
+.dark-mode section {
+    background-color: #121212 !important;
+}
+.dark-mode legend,
+.dark-mode h3{
+    color: var(--titulos-azul-color) !important;
+}
+.dark-mode h1,
+.dark-mode span,
+.dark-mode h2, 
+.dark-mode .welcome-container p,
+.dark-mode .task-card-custom p{
+    color: var(--text-primary) !important;
+}
+.dark-mode .spinner{
+     border: 3px solid rgba(255, 255, 255, 0.3);
+}
+.dark-mode .amount-container  input::placeholder,
+.dark-mode .currency-label{
+   color: var(--titulos-azul-color) !important;
+}
+/* Ajuste para las tarjetas y formularios de Banca360 */
+.dark-mode .task-card-custom, 
+.dark-mode .form-wrapper-custom,
+.dark-mode .modal-content, 
+.dark-mode label,
+.dark-mode .password-collapse,
+
+.dark-mode .filter-btn{
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode .filter-btn.active {
+    background-color: var(--primary-color) !important;
+}
+.dark-mode .filter-btn:hover  {
+    background-color: var(--primary-hover) !important;
+}
+.dark-mode .navbar,
+.dark-mode .nav-link,
+.dark-mode .opdesplegables-menu
+{
+    background-color: var(--text-dark) !important;
+    color: var(--text-light) !important;
+    border-top: 1px solid #031731;
+}
+.dark-mode .footer,
+.dark-mode .footer-bottom{
+    background-color: var(--text-dark) !important;
+    border-top: 1px solid #031f3b;
+   
+}
+.dark-mode .footer-section h3, 
+.dark-mode p, 
+.dark-mode h4, 
+.dark-modea{
+     color: rgb(248, 248, 248) !important;
+}
+.dark-mode .opdesplegables-menu a:hover{
+    background-color: var(--primary-color) !important;
+
+}
+.dark-mode a {
+    color: #f4f5f6 !important;
+}
+.dark-mode a:hover{
+    color: #ffffff !important;
+}
+/* Ajuste para inputs (Pago Móvil, Transferencias) */
+.dark-mode input, 
+.dark-mode select, 
+.dark-mode textarea {
+    background-color: #2c2c2c !important;
+    color: #ffffff !important;
+    border: 1px solid #444 !important;
+}
+.dark-mode .incoming { background: #3e8658 !important; color: #166534 !important; }
+.dark-mode .outgoing { background: #983434 !important; color: #991b1b !important; }
+.dark-mode .btn-eye-toggle{ background-color: var(--primary-hover) !important;}
+.dark-mode .btn-eye-toggle:hover{ background-color: var(--primary-color) !important;}
+.dark-mode .transaction-item:hover {
+    background-color: var(--border-color)!important;
+}
+
+/*******************************************************************************************/
+/* --- Estilos del Interruptor de Tema --- */
+.theme-switch {
+    --sw-width: 60px;
+    --sw-height: 30px;
+    --sw-circle: 24px;
+    --sw-bg-light: #e2e8f0; /* Un gris suave que combina con tu --bg-light */
+    --sw-bg-dark: #0f172a;  /* Usando tu --text-dark */
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: var(--sw-width);
+    height: var(--sw-height);
+    border-radius: 30px;
+    background-color: var(--sw-bg-light);
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.theme-switch__input {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+}
+
+/* Iconos de fondo (los que se ven "apagados") */
+.theme-switch__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 7px;
+    pointer-events: none;
+}
+
+.theme-switch__icons .material-symbols-outlined {
+    font-size: 16px;
+    color: #94a3b8; /* Gris tenue */
+    transition: color 0.3s ease;
+}
+
+/* El círculo deslizante azul */
+.theme-switch__circle {
+    position: absolute;
+    left: 3px;
+    width: var(--sw-circle);
+    height: var(--sw-circle);
+    background-color: var(--primary-color); /* Tu azul principal */
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-switch__circle .material-symbols-outlined {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    transition: opacity 0.2s ease;
+    font-variation-settings: 'FILL' 0, 'wght' 400;
+}
+
+/* Lógica de visibilidad de iconos dentro del círculo */
+.moon-active { opacity: 0; }
+.sun-active { opacity: 1; }
+
+/* --- ESTADOS --- */
+
+/* Cuando el checkbox está activo (Modo Oscuro) */
+.theme-switch__input:checked + .theme-switch__icons + .theme-switch__circle {
+    transform: translateX(30px); /* Desliza a la derecha */
+}
+
+.theme-switch__input:checked + .theme-switch__icons + .theme-switch__circle .sun-active { opacity: 0; }
+.theme-switch__input:checked + .theme-switch__icons + .theme-switch__circle .moon-active { opacity: 1; }
+
+/* Cambio de fondo del switch basado en tu modo oscuro */
+.dark-mode .theme-switch {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+}
+
+/* Ajuste manual si no quieres depender solo de la clase .dark-mode */
+.theme-switch__input:checked ~ .theme-switch__icons .sun-icon { color: #475569; }
+/***************************************************************************************/
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
 }
 
 /*////////////////////////////// NAVBAR //////////////////////////////*/
@@ -610,7 +848,7 @@ body {
 }
 
 .btn-submit-full:hover {
-    background: #1d4ed8;
+    background: #0a365c !important;;
     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
 }
 
@@ -702,7 +940,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-left: 6px solid #10b981;
+    border-left: 6px solid #06385aa2;
     padding: 1.5rem 2rem !important;
 }
 
@@ -891,4 +1129,254 @@ body {
 /* Estilo para que se vea clickable */
 .transaction-item:hover {
     background-color: #fcfdfe;
+    
+    border-radius:5px ;
+}
+/* --- ESTILOS DE PERFIL --- */
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.avatar-container {
+    margin-bottom: 1rem;
+}
+
+
+
+.profile-card {
+    margin-bottom: 1.5rem !important;
+}
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas grandes */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Ajuste para móvil */
+@media (max-width: 600px) {
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-item label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Opciones de Seguridad */
+.security-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.security-item:last-child {
+    border-bottom: none;
+}
+
+.sec-title {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.sec-desc {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-badge.valid {
+    background: #dcfce7;
+    color: #166534;
+}
+/* --- ESTILOS DEL DESPLEGABLE --- */
+.password-collapse {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease, 
+                margin 0.4s ease;
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.password-collapse.show {
+    max-height: 500px; /* Suficiente para los nuevos campos */
+    opacity: 1;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Estilo para los checks de validación */
+.password-requirements {
+    margin-top: 10px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+.requirement.valid {
+    color: #166534; /* Verde éxito */
+}
+
+.requirement .material-symbols-outlined {
+    font-size: 16px;
+}
+
+/* Botón de información al lado del monto */
+.btn-info-detail {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.btn-info-detail:hover {
+    transform: scale(1.2);
+}
+
+.tx-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none; /* Oculta por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.tx-modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.tx-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-modal {
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+}
+
+.detail-item {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item label {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.avatar-container .material-symbols-outlined {
+    font-size: 100px;
+    color: var(--primary-color);
+}
+
+.profile-card .header-task h3 {
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.profile-card .header-task h3 .material-symbols-outlined {
+    margin-right: 8px;
+}
+
+.security-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.password-requirements {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.requirement {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.text-danger {
+    color: var(--primary-color) !important;
 }
