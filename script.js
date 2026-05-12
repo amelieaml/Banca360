@@ -39,8 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 reqLength.classList.remove('valid');
                 reqLength.querySelector('.material-symbols-outlined').innerText = 'circle';
+        
+                
             }
-
+            
             // Validar que sean solo números
             const onlyNumbers = /^[0-9]*$/.test(value);
             if (onlyNumbers && value.length > 0) {
@@ -69,11 +71,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const btn = this.querySelector('.btn-submit-full');
             const btnText = btn.querySelector('span');
             const spinner = btn.querySelector('.spinner');
-
+            
             // Validar que las contraseñas coincidan
             const pass = document.getElementById('password').value;
             const confirmPass = document.getElementById('confirm-password').value;
 
+            // Validar longitud mínima y que sean solo números
+            const onlyNumbers = /^[0-9]*$/.test(pass);
+            
+            if (pass.length < 6) {
+                alert("La contraseña debe tener al menos 6 caracteres.");
+                return; // Detiene la ejecución aquí
+            }
+
+            if (!onlyNumbers || pass.length === 0) {
+                alert("La contraseña debe contener solo números.");
+                return; // Detiene la ejecución aquí
+            }
             if (pass !== confirmPass) {
                 alert("Las contraseñas no coinciden. Por favor, verifica.");
                 return;
@@ -182,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 reqLen.classList.remove('valid');
                 reqLen.querySelector('.material-symbols-outlined').innerText = 'circle';
             }
-
+            
             // Solo Números
             const isNumeric = /^[0-9]*$/.test(val);
             if (isNumeric && val.length > 0) {
@@ -192,6 +206,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 reqNum.classList.remove('valid');
                 reqNum.querySelector('.material-symbols-outlined').innerText = 'circle';
             }
+        });
+    }
+    const changePasswordForm = document.getElementById('changePasswordForm');
+
+    if (changePasswordForm) {
+        changePasswordForm.addEventListener('submit', (e) => {
+            const val = newPassInput.value;
+            const isNumeric = /^[0-9]*$/.test(val);
+
+            // Validar longitud
+            if (val.length < 6) {
+                e.preventDefault(); // Evita que el formulario se envíe
+                alert("La nueva contraseña debe tener al menos 6 caracteres.");
+                return;
+            }
+
+            // Validar que sean solo números
+            if (!isNumeric || val.length === 0) {
+                e.preventDefault(); // Evita que el formulario se envíe
+                alert("La contraseña debe contener solo números.");
+                return;
+            }
+
+            // Si llega aquí, los datos son válidos
+            alert("¡Contraseña actualizada con éxito!");
         });
     }
 
