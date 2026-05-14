@@ -285,7 +285,18 @@ input:checked + .slider:before {
     padding: 0 2rem;
 }
 
+.nav-logo img {
+    height: 50px;    /* Ajusta este número según el tamaño de tu navbar */
+    width: auto;     /* Mantiene la proporción para que no se vea estirado */
+    display: block;
+    object-fit: contain;
+}
+
 .nav-logo {
+    display: flex;         /* Esto pone la imagen y el texto en la misma línea */
+    align-items: center;   /* Centra la imagen y el texto verticalmente */
+    gap: 12px;             /* El espacio exacto entre la imagen y el texto */
+    
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
