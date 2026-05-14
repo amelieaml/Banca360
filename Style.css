@@ -110,6 +110,9 @@ body {
     background-color: var(--primary-color) !important;
 
 }
+.dark-mode .tx-modal-content {
+    background: var(--bg-card) !important;
+}
 .dark-mode a {
     color: #f4f5f6 !important;
 }
