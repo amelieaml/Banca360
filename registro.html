@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca360 - Registro</title>
+
+    <link rel="icon" type="image/png" href="logocortado.png">
+
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="" class="nav-logo"><img src="logo.png" alt="Banca360" class="navbar-logo-img">Banca360</a>   
+                     
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+         <div class="nav-item">
+            <label class="theme-switch" for="theme-toggle">
+                <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+                <div class="theme-switch__icons">
+                    <span class="material-symbols-outlined sun-icon">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-icon">&#xf03e;</span>
+                </div>
+                <div class="theme-switch__circle">
+                    <span class="material-symbols-outlined sun-active">&#xe518;</span>
+                    <span class="material-symbols-outlined moon-active">&#xf03e;</span>
+                </div>
+            </label>
+        </div>
+    </nav>
+
+    <main class="page-content-wrapper">
+        
+        <div class="form-wrapper-custom">
+            <div class="task-card-custom">
+                <div class="profile-header">
+                    <h1>Crear cuenta</h1>
+                </div>
+                <form id="registerForm" class="task-form-custom">
+    
+                    <fieldset class="form-section-container">
+                        <legend class="custom-section-title">Información personal</legend>
+                        <div class="form-row" id="Informacion-personal">
+                            <div class="form-group"> 
+                                <label>Apellidos <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil"><span class="material-symbols-outlined">person</span></span>
+                                    <input type="text" required placeholder="Primer y Segundo Apellido"> 
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Nombres <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil"><span class="material-symbols-outlined">person</span></span>
+                                    <input type="text" required placeholder="Primer y Segundo Nombre"> 
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Número de identificación <span class="required-mark">*</span></label>
+                                <div class="input-with-icon combo-id">
+                                    <select class="select-minimalista select-tipo-xs" required> 
+                                        <option value="V">V</option>
+                                        <option value="E">E</option>
+                                        <option value="J">J</option>
+                                    </select>
+                                    <input type="text" required inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su cédula">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Fecha de Nacimiento <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <input type="date" id="fecha-nacimiento" required> 
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">phone</span>
+                                    </span>
+                                    <input type="text" id="input-telefono" inputmode="numeric" placeholder="Ingrese su número de teléfono" maxlength="12">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Lugar de residencia <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil"><span class="material-symbols-outlined">location_on</span></span>
+                                    <input type="text" required placeholder="Ej: Caracas, Urb. La Campiña">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-section-container">
+                        <legend class="custom-section-title">Información de la cuenta</legend>
+                        <div class="form-row" id="Informacion-cuenta">
+                            <div class="form-group">
+                                <label>Número de cuenta</label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">credit_card</span>
+                                    </span>
+                                        <input type="text" id="numero-cuenta" placeholder="0000 0000 0000 0000 0000" maxlength="24" inputmode="numeric">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Correo <span class="required-mark">*</span></label>
+                                <input type="email" required placeholder="ejemplo@correo.com">
+                            </div>
+                    
+                            <div class="form-group">
+                                <label>Contraseña <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">lock</span>
+                                    </span>
+                                    <input type="password" id="password" required placeholder="Ej. 123456">
+                                </div>
+                                <ul class="password-requirements">
+                                    <li id="req-length">
+                                        <span class="material-symbols-outlined">circle</span> Mínimo 6 caracteres
+                                    </li>
+                                    <li id="req-number">
+                                        <span class="material-symbols-outlined">circle</span> Solo números
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Confirmar Contraseña <span class="required-mark">*</span></label>
+                                <div class="input-with-icon">
+                                    <span class="icon-perfil">
+                                        <span class="material-symbols-outlined">lock_reset</span>
+                                    </span>
+                                    <input type="password" id="confirm-password" required placeholder="Repita su contraseña">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-footer-actions">
+                        <button type="submit" class="btn-submit-full">
+                            <span>Registrarse</span>
+                            <div class="spinner" id="spinner"></div>
+                        </button>
+                        <p class="login-prompt">
+                            ¿Ya tienes cuenta? <a href="login.html" class="login-link">Iniciar sesión</a>
+                        </p>
+                    </div>
+
+                 </form>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Banca360</h3>
+                <p>Tu banca de confianza.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#">Soporte</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>banca360@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Banca360. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
