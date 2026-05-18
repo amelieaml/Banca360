@@ -104,6 +104,17 @@ body {
 .dark-mode .balance-card{
     background: linear-gradient(to right, #101429, var(--bg-card)) !important;
 }
+.dark-mode .hero-banner-card {
+    background: linear-gradient(to right, #101429, var(--bg-card)) !important;
+}
+.dark-mode .hero-btn-register {
+    background-color: #12378d !important;
+    border-color: #12378d !important;
+}
+.dark-mode .hero-btn-register:hover {
+    background-color: #0d2b6f !important;
+    border-color: #0d2764 !important;
+}
 .dark-mode .filter-btn.active {
     background-color: var(--primary-color) !important;
     border-color: var(--primary-color) !important;
