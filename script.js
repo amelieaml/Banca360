@@ -258,32 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================
-    // 7. LÓGICA DE MODALES
-    // ==========================================
-    const openModalBtn = document.getElementById('btnOpenModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    const passwordModal = document.getElementById('passwordModal');
-
-    if (openModalBtn && passwordModal) {
-        openModalBtn.addEventListener('click', () => {
-            passwordModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeModalBtn.addEventListener('click', () => {
-            passwordModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === passwordModal) {
-                passwordModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-    }
-
 });
 
 // ==========================================
