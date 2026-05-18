@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banca360 - Registro</title>
+    <title>Banca360</title>
 
     <link rel="icon" type="image/png" href="logocortado.png">
 
     <link rel="stylesheet" href="Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <nav class="navbar">
         <div class="nav-container">
-            <a href="" class="nav-logo"><img src="logo.png" alt="Banca360" class="navbar-logo-img">Banca360</a>   
-                     
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <a href="" class="nav-logo"><img src="logo.png" alt="Banca360" class="navbar-logo-img">Banca360</a>
+            <a href="login.html" class="nav-online-banking-btn">Banca en Línea</a>       
         </div>
          <div class="nav-item">
             <label class="theme-switch" for="theme-toggle">
@@ -41,154 +32,89 @@
         </div>
     </nav>
 
-    <main class="page-content-wrapper">
+    <main class="page-content-wrapper main-landing-container">
         
-        <div class="form-wrapper-custom">
-            <div class="task-card-custom">
-                <div class="profile-header">
-                    <h1>Crear cuenta</h1>
-                </div>
-                <form id="registerForm" class="task-form-custom">
-    
-                    <fieldset class="form-section-container">
-                        <legend class="custom-section-title">Información personal</legend>
-                        <div class="form-row" id="Informacion-personal">
-                            <div class="form-group"> 
-                                <label>Apellidos <span class="required-mark">*</span></label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil"><span class="material-symbols-outlined">person</span></span>
-                                    <input type="text" required placeholder="Primer y Segundo Apellido"> 
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Nombres <span class="required-mark">*</span></label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil"><span class="material-symbols-outlined">person</span></span>
-                                    <input type="text" required placeholder="Primer y Segundo Nombre"> 
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Número de identificación <span class="required-mark">*</span></label>
-                                <div class="input-with-icon combo-id">
-                                    <select class="select-minimalista select-tipo-xs" required> 
-                                        <option value="V">V</option>
-                                        <option value="E">E</option>
-                                        <option value="J">J</option>
-                                    </select>
-                                    <input type="text" required inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Ingrese su cédula">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Fecha de Nacimiento <span class="required-mark">*</span></label>
-                                <div class="input-with-icon">
-                                    <input type="date" id="fecha-nacimiento" required> 
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Teléfono</label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil">
-                                        <span class="material-symbols-outlined">phone</span>
-                                    </span>
-                                    <input type="text" id="input-telefono" inputmode="numeric" placeholder="Ingrese su número de teléfono" maxlength="12">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Lugar de residencia <span class="required-mark">*</span></label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil"><span class="material-symbols-outlined">location_on</span></span>
-                                    <input type="text" required placeholder="Ej: Caracas, Urb. La Campiña">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <fieldset class="form-section-container">
-                        <legend class="custom-section-title">Información de la cuenta</legend>
-                        <div class="form-row" id="Informacion-cuenta">
-                            <div class="form-group">
-                                <label>Número de cuenta</label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil">
-                                        <span class="material-symbols-outlined">credit_card</span>
-                                    </span>
-                                        <input type="text" id="numero-cuenta" placeholder="0000 0000 0000 0000 0000" maxlength="24" inputmode="numeric">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Correo <span class="required-mark">*</span></label>
-                                <input type="email" required placeholder="ejemplo@correo.com">
-                            </div>
-                    
-                            <div class="form-group">
-                                <label>Contraseña <span class="required-mark">*</span></label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil">
-                                        <span class="material-symbols-outlined">lock</span>
-                                    </span>
-                                    <input type="password" id="password" required placeholder="Ej. 123456">
-                                </div>
-                                <ul class="password-requirements">
-                                    <li id="req-length">
-                                        <span class="material-symbols-outlined">circle</span> Mínimo 6 caracteres
-                                    </li>
-                                    <li id="req-number">
-                                        <span class="material-symbols-outlined">circle</span> Solo números
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Confirmar Contraseña <span class="required-mark">*</span></label>
-                                <div class="input-with-icon">
-                                    <span class="icon-perfil">
-                                        <span class="material-symbols-outlined">lock_reset</span>
-                                    </span>
-                                    <input type="password" id="confirm-password" required placeholder="Repita su contraseña">
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <div class="form-footer-actions">
-                        <button type="submit" class="btn-submit-full">
-                            <span>Registrarse</span>
-                            <div class="spinner" id="spinner"></div>
-                        </button>
-                        <p class="login-prompt">
-                            ¿Ya tienes cuenta? <a href="login.html" class="login-link">Iniciar sesión</a>
-                        </p>
-                    </div>
-
-                 </form>
-                
+        <div class="task-card-custom hero-banner-card">
+            <h1 class="hero-title">Bienvenido a tu banca de confianza.</h1>
+            <p class="hero-description">
+                Maneja tus cuentas, realiza pagos móviles y gestiona tus transacciones con la plataforma digital más rápida, intuitiva y respaldada por seguridad biométrica avanzada.
+            </p>
+            
+            <div class="hero-action-buttons">
+                <a href="login.html" class="hero-btn-link">
+                    <button class="btn-submit-full hero-btn-content">
+                        <span class="material-symbols-outlined">login</span>
+                        <span>Ingresar a mi Cuenta</span>
+                    </button>
+                </a>
+                <a href="registro.html" class="hero-btn-link">
+                    <button class="btn-secondary hero-btn-register">
+                        <span class="material-symbols-outlined">person_add</span>
+                        <span>Crear Cuenta</span>
+                    </button>
+                </a>
             </div>
         </div>
+
+        <h2 class="services-section-title">Servicios Disponibles</h2>
+        
+        <div class="profile-info-grid services-grid-margin">
+            
+            <div class="task-card-custom tx-entry service-card-accounts">
+                <div class="service-card-header">
+                    <span class="material-symbols-outlined icon-accounts">account_balance_wallet</span>
+                    <h3 class="service-card-title">Cuentas Corrientes y Ahorros</h3>
+                </div>
+                <p class="service-card-text">
+                    Apertura de cuentas sin necesidad de ir a agencias. Consulta balances y estados de cuenta.
+                </p>
+            </div>
+
+            <div class="task-card-custom tx-entry service-card-mobile-pay">
+                <div class="service-card-header">
+                    <span class="material-symbols-outlined icon-mobile-pay">bolt</span>
+                    <h3 class="service-card-title">Pago Móvil</h3>
+                </div>
+                <p class="service-card-text">
+                    Envía y recibe dinero de inmediato utilizando únicamente el número telefónico y documento de identidad de destino.
+                </p>
+            </div>
+
+            <div class="task-card-custom tx-entry service-card-security">
+                <div class="service-card-header">
+                    <span class="material-symbols-outlined icon-security">security</span>
+                    <h3 class="service-card-title">Seguridad Avanzada</h3>
+                </div>
+                <p class="service-card-text">
+                    Monitoreo inteligente contra fraudes.
+                </p>
+            </div>
+
+        </div>
+
     </main>
 
-    <footer class="footer">
+    <footer class="footer main-footer-spacing">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>Banca360</h3>
-                <p>Tu banca de confianza.</p>
+                <p>Tu banca de confianza</p>
             </div>
             <div class="footer-section">
-                <h4>Enlaces</h4>
+                <h4>Productos</h4>
                 <ul>
-                    <li><a href="#">Soporte</a></li>
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
+                    <li><a href="login.html">Cuentas</a></li>
+                    <li><a href="login.html">Pago Móvil</a></li>
+                    <li><a href="login.html">Transferencias</a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>Contacto</h4>
-                <p>banca360@gmail.com</p>
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="#">Atención al Cliente</a></li>
+                    <li><a href="#">Términos de Uso</a></li>
+                    <li><a href="#">Privacidad de Datos</a></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
@@ -196,11 +122,7 @@
         </div>
     </footer>
 
+    <!-- Vinculamos el archivo JavaScript externo -->
     <script src="script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
-
 </body>
-
 </html>
